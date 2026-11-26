@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Donut Palace | Donuts, Kolaches and Coffee in DeRidder, LA</title>
+<meta name="description" content="Donuts, kolaches, croissant sandwiches and coffee at 732 N Pine St, DeRidder, LA. Open 4:30 AM to noon Monday through Saturday and 5 AM to noon on Sunday. Call (337) 463-9800.">
+<link rel="canonical" href="https://donutpalace-deridder.pages.dev/">
+<meta name="theme-color" content="#141C33">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Donut Palace">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://donutpalace-deridder.pages.dev/">
+<meta property="og:title" content="Donut Palace | Donuts, Kolaches and Coffee in DeRidder, LA">
+<meta property="og:description" content="Fresh donuts, kolaches and croissant sandwiches on North Pine Street. Open before sunrise, six days a week.">
+<meta property="og:image" content="https://donutpalace-deridder.pages.dev/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Donut Palace crown logo over a glazed donut on a cooling rack">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Donut Palace | Donuts, Kolaches and Coffee in DeRidder, LA">
+<meta name="twitter:description" content="Fresh donuts, kolaches and croissant sandwiches on North Pine Street. Open before sunrise, six days a week.">
+<meta name="twitter:image" content="https://donutpalace-deridder.pages.dev/og.jpg">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preload" href="/assets/fonts/dp-display-bi.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/fonts/dp-text-r.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" as="image" href="/assets/hero-wide.webp" media="(min-aspect-ratio: 4/5)" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/hero-tall.webp" media="(max-aspect-ratio: 4/5)" fetchpriority="high">
+<style>
+@font-face{font-family:"DP Display";src:url(/assets/fonts/dp-display-bi.woff) format("woff");font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:"DP Display";src:url(/assets/fonts/dp-display-i.woff) format("woff");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"DP Text";src:url(/assets/fonts/dp-text-r.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"DP Text";src:url(/assets/fonts/dp-text-b.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"DP Cond";src:url(/assets/fonts/dp-cond-b.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  --ink:#141C33; --ink-2:#1E2A4E; --glaze:#E7A548; --dough:#C9822F;
+  --cherry:#A3243B; --cherry-deep:#7E1B2D; --cream:#FFF4E1; --tile:#FBFAF6;
+  --grout:#ECE7DD; --cocoa:#2B1B16; --cocoa-2:#5C4339;
+  --display:"DP Display","Bookman Old Style","URW Bookman",Georgia,serif;
+  --text:"DP Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --cond:"DP Cond","Helvetica Neue Condensed","Arial Narrow",Arial,sans-serif;
+  --gutter:clamp(1.25rem,4.5vw,4rem);
+  --measure:34rem;
+  --header-h:4.25rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:var(--header-h)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--tile);color:var(--cocoa);font-family:var(--text);font-size:1.125rem;line-height:1.55;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+img,video,svg{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0 0 1em}
+h1,h2,h3{margin:0;font-family:var(--display);font-style:italic;font-weight:700;line-height:1.02;letter-spacing:-.01em}
+:focus-visible{outline:3px solid var(--glaze);outline-offset:3px;border-radius:4px}
+.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:fixed;left:1rem;top:-4rem;z-index:100;background:var(--glaze);color:var(--cocoa);padding:.6rem 1rem;border-radius:999px;font-weight:700;text-decoration:none;transition:top .2s}
+.skip:focus{top:1rem}
+
+/* ---------- header ---------- */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header-h);display:flex;align-items:center;gap:1.5rem;padding:0 var(--gutter);padding-top:env(safe-area-inset-top);color:var(--cream);transition:background-color .35s ease,box-shadow .35s ease}
+.top.is-solid{background:rgba(20,28,51,.94);box-shadow:0 1px 0 rgba(255,244,225,.08);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;margin-right:auto}
+.brand svg{width:2.1rem;height:2.1rem}
+.brand span{font-family:var(--display);font-style:italic;font-weight:700;font-size:1.3rem;letter-spacing:-.01em}
+.nav{display:flex;gap:1.6rem}
+.nav a{font-size:.95rem;text-decoration:none;opacity:.86;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav a:hover{opacity:1;border-color:var(--glaze)}
+.pill{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem 1rem;border-radius:999px;background:var(--glaze);color:var(--cocoa);font-weight:700;font-size:.95rem;text-decoration:none;white-space:nowrap}
+.pill svg{width:1rem;height:1rem}
+@media (max-width:860px){.nav{display:none}.brand span{font-size:1.15rem}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;background:var(--ink);color:var(--cream);isolation:isolate}
+.layer{position:absolute;inset:0;will-change:transform}
+.hero__media{inset:-6% 0 -6% 0;z-index:0}
+.hero__poster,.hero__poster img,.hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.hero__video{opacity:0;transition:opacity .9s ease}
+.hero__video.is-playing{opacity:1}
+.hero__shade{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(20,28,51,.94) 0%,rgba(20,28,51,.78) 30%,rgba(20,28,51,.25) 58%,rgba(20,28,51,0) 75%),
+  linear-gradient(180deg,rgba(20,28,51,.55) 0%,rgba(20,28,51,0) 22%,rgba(20,28,51,0) 72%,rgba(20,28,51,.9) 100%)}
+.hero__motes{z-index:1;pointer-events:none}
+.mote{position:absolute;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(255,226,170,.55),rgba(231,165,72,.18) 55%,rgba(231,165,72,0) 72%);filter:blur(1.5px);opacity:.75;animation:drift var(--dur,22s) ease-in-out infinite alternate}
+.mote.is-soft{filter:blur(6px);opacity:.45}
+@keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(var(--dx,10px),var(--dy,-26px),0)}}
+.hero__content{position:relative;z-index:2;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:1.4rem;padding:calc(var(--header-h) + 3rem) var(--gutter) 4.5rem;max-width:min(46rem,100%);will-change:transform,opacity}
+.crest{width:clamp(4.2rem,8vw,6.2rem);height:auto;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+.wordmark{font-size:clamp(3.6rem,10.4vw,8.4rem);line-height:.92;letter-spacing:-.02em;color:var(--cream);text-wrap:balance;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.lede{max-width:28rem;font-size:clamp(1.12rem,1.6vw,1.3rem);color:rgba(255,244,225,.9);margin:0}
+.status{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.92rem;color:var(--cream);margin:0}
+.status::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--glaze);box-shadow:0 0 0 4px rgba(231,165,72,.22)}
+.status.is-closed::before{background:#8A94AD;box-shadow:0 0 0 4px rgba(138,148,173,.2)}
+.actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:3.2rem;padding:.8rem 1.4rem;border-radius:999px;font-weight:700;font-size:1.02rem;text-decoration:none;border:2px solid transparent;transition:transform .2s ease,background-color .2s ease,color .2s ease}
+.btn svg{width:1.15rem;height:1.15rem;flex:none}
+.btn--glaze{background:var(--glaze);color:var(--cocoa)}
+.btn--glaze:hover{background:#F0B964}
+.btn--line{border-color:rgba(255,244,225,.65);color:var(--cream)}
+.btn--line:hover{background:rgba(255,244,225,.1);border-color:var(--cream)}
+.btn--cherry{background:var(--cherry);color:var(--cream)}
+.btn--cherry:hover{background:var(--cherry-deep)}
+.btn:active{transform:translateY(1px)}
+.vidtoggle{position:absolute;z-index:3;right:var(--gutter);bottom:1.4rem;width:2.75rem;height:2.75rem;border-radius:50%;border:1.5px solid rgba(255,244,225,.45);background:rgba(20,28,51,.45);color:var(--cream);display:grid;place-items:center;cursor:pointer}
+.vidtoggle:hover{background:rgba(20,28,51,.7)}
+.vidtoggle svg{width:1rem;height:1rem}
+.vidtoggle .i-play{display:none}
+.vidtoggle[aria-pressed="true"] .i-play{display:block}
+.vidtoggle[aria-pressed="true"] .i-pause{display:none}
+
+.hero__top,.hero__bottom{display:contents}
+@media (max-aspect-ratio:4/5){
+  .hero__poster,.hero__poster img,.hero__video{object-position:50% 50%}
+  .hero__shade{background:linear-gradient(180deg,rgba(20,28,51,.93) 0%,rgba(20,28,51,.8) 30%,rgba(20,28,51,.38) 47%,rgba(20,28,51,0) 59%,rgba(20,28,51,0) 88%,rgba(20,28,51,.72) 100%)}
+  .hero__content{justify-content:flex-start;gap:1rem;padding-top:calc(var(--header-h) + 1.25rem);padding-bottom:2rem}
+  .crest{display:none}
+  .wordmark{font-size:clamp(3.1rem,15.5vw,5.6rem)}
+  .lede{font-size:1.05rem}
+  .actions{gap:.6rem}
+  .btn{min-height:2.9rem;padding:.65rem 1.1rem;font-size:.98rem}
+  .vidtoggle{bottom:1.1rem;top:auto}
+}
+
+/* page-load sequence: one orchestrated reveal */
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i,0) * 110ms + 150ms)}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+
+/* ---------- checker band ---------- */
+.checker{height:3.5rem;overflow:hidden;background:var(--cream)}
+.checker__strip{height:100%;width:calc(100% + 7rem);background:conic-gradient(var(--cherry) 90deg,var(--cream) 90deg 180deg,var(--cherry) 180deg 270deg,var(--cream) 270deg) 0 0/3.5rem 3.5rem;will-change:transform}
+
+/* ---------- shared section ---------- */
+.section{padding:clamp(4.5rem,9vw,8rem) var(--gutter);position:relative}
+.tiled{background-color:var(--tile);background-image:linear-gradient(var(--grout) 1px,transparent 1px),linear-gradient(90deg,var(--grout) 1px,transparent 1px);background-size:4.5rem 4.5rem;background-position:-1px -1px}
+.wrap{max-width:72rem;margin:0 auto}
+.h2{font-size:clamp(2.3rem,5.4vw,4rem);color:var(--cocoa);text-wrap:balance}
+.intro{max-width:var(--measure);color:var(--cocoa-2);margin-top:1.1rem}
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.about__copy p{max-width:var(--measure);font-size:1.2rem;line-height:1.62}
+.about__copy .h2{margin-bottom:1.6rem}
+.facts{list-style:none;margin:2.2rem 0 0;padding:0;display:grid;gap:.9rem;max-width:var(--measure)}
+.facts li{display:flex;align-items:baseline;gap:.9rem;padding-top:.9rem;border-top:2px solid var(--cherry)}
+.facts b{font-family:var(--cond);text-transform:uppercase;letter-spacing:.07em;font-size:.95rem;color:var(--cherry);min-width:7.5rem}
+.facts a{font-weight:700}
+.about__art{position:relative;aspect-ratio:4/5;max-width:31rem;width:100%;justify-self:center}
+.about__art figure{margin:0;position:absolute;overflow:hidden;border-radius:2px;background:var(--cocoa);box-shadow:0 24px 60px -24px rgba(43,27,22,.55)}
+.about__art img{width:100%;height:100%;object-fit:cover}
+.art-a{inset:0 18% 14% 0;border:10px solid var(--cream)}
+.art-b{inset:46% 0 0 46%;border:10px solid var(--cream)}
+.art-tag{position:absolute;left:-.6rem;bottom:-1.3rem;z-index:2;background:var(--cherry);color:var(--cream);font-family:var(--cond);text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;padding:.5rem .8rem;transform:rotate(-3deg)}
+@media (max-width:860px){
+  .about{grid-template-columns:1fr}
+  .about__art{order:-1;max-width:26rem}
+}
+
+/* ---------- menu letterboard ---------- */
+.menu-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1rem 3rem;margin-bottom:clamp(2rem,4vw,3rem)}
+.menu-head .intro{margin:0}
+.board{--row:2.35rem;position:relative;border:clamp(10px,1.6vw,16px) solid transparent;border-radius:6px;
+  background:
+    repeating-linear-gradient(180deg,#FDFCF8 0 calc(var(--row) - 3px),#E6E1D6 calc(var(--row) - 3px) calc(var(--row) - 2px),#F5F2EA calc(var(--row) - 2px) var(--row)) padding-box,
+    linear-gradient(135deg,#E9ECEF 0%,#A3AAB3 22%,#F4F6F8 48%,#8E97A2 74%,#D7DBE0 100%) border-box;
+  box-shadow:0 30px 60px -30px rgba(20,28,51,.6),inset 0 2px 6px rgba(0,0,0,.08);
+  padding:var(--row) clamp(1rem,3vw,2.4rem);color:#1C1715}
+.board__title{display:flex;align-items:center;justify-content:center;gap:.8rem;height:calc(var(--row) * 2);margin:calc(var(--row) * -.5) 0 calc(var(--row) * .5)}
+.board__title svg{width:2.6rem;height:2.6rem}
+.board__title span{font-family:var(--cond);font-size:1.7rem;letter-spacing:.14em;color:var(--cherry)}
+.board__cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(1.5rem,4vw,3.5rem)}
+.board h3{font-family:var(--cond);font-style:normal;font-weight:700;font-size:1.3rem;letter-spacing:.12em;color:var(--cherry);height:var(--row);line-height:var(--row);margin:0}
+.board ul{list-style:none;margin:0 0 var(--row);padding:0}
+.board li{display:flex;justify-content:space-between;gap:1rem;height:var(--row);line-height:calc(var(--row) - 4px);font-family:var(--cond);font-weight:700;font-size:clamp(1.02rem,1.4vw,1.2rem);letter-spacing:.08em;text-transform:uppercase}
+.board li span:last-child{font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.lb{display:inline-block}
+.lb .w{white-space:nowrap}
+.lb i{display:inline-block;font-style:normal}
+.board__foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;border-top:2px dashed #D9D2C4;padding-top:calc(var(--row) * .5);font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;font-size:1rem}
+.board__foot a{color:var(--cherry);text-decoration:none}
+.board__foot a:hover{text-decoration:underline}
+.board-note{margin-top:1.2rem;font-size:.95rem;color:var(--cocoa-2)}
+@media (max-width:900px){.board__cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.board{--row:2.15rem}.board__cols{grid-template-columns:1fr}.board__title span{font-size:1.35rem}}
+
+/* ---------- reviews ---------- */
+.reviews{background:var(--cream)}
+.quotes{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);margin-top:clamp(2.2rem,5vw,3.5rem)}
+.quote{margin:0;padding-top:1.4rem;border-top:3px solid var(--cherry);display:flex;flex-direction:column;gap:1.2rem}
+.quote p{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(1.35rem,2.2vw,1.75rem);line-height:1.28;color:var(--cocoa);margin:0}
+.quote:first-child p{font-size:clamp(1.6rem,3vw,2.35rem);font-weight:700}
+.quote footer{display:flex;align-items:center;gap:.8rem;font-size:.98rem;color:var(--cocoa-2)}
+.stars{color:var(--glaze);letter-spacing:.12em;font-size:1.05rem}
+.quote cite{font-style:normal;font-weight:700;color:var(--cocoa)}
+.reviews-link{display:inline-flex;margin-top:clamp(2rem,4vw,3rem);font-weight:700;color:var(--cherry);text-underline-offset:.25em}
+@media (max-width:860px){.quotes{grid-template-columns:1fr}}
+
+/* ---------- visit ---------- */
+.visit{background:linear-gradient(180deg,var(--ink) 0%,var(--ink) 55%,var(--ink-2) 100%);color:var(--cream);overflow:hidden}
+.visit::after{content:"";position:absolute;left:50%;bottom:-40vw;width:120vw;height:60vw;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(231,165,72,.32),rgba(231,165,72,0));pointer-events:none}
+.visit .h2{color:var(--cream)}
+.visit__grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,7rem)}
+.hours{width:100%;max-width:26rem;border-collapse:collapse;margin-top:1.8rem;font-variant-numeric:tabular-nums}
+.hours th,.hours td{text-align:left;padding:.85rem 0;border-bottom:1px solid rgba(255,244,225,.16);font-weight:400}
+.hours td{text-align:right}
+.hours tr.is-today th,.hours tr.is-today td{color:var(--glaze);font-weight:700}
+.hours .today-tag{font-family:var(--cond);text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;margin-left:.5rem;padding:.12rem .4rem;border:1.5px solid currentColor;border-radius:4px;vertical-align:.12em}
+.visit .status{margin-top:1.6rem}
+.fine{font-size:.95rem;color:rgba(255,244,225,.7);margin-top:1rem}
+.address{font-family:var(--display);font-style:italic;font-weight:700;font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.08;margin:1.8rem 0 .6rem}
+.address a{text-decoration:none}
+.address a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.15em}
+.visit .actions{margin-top:1.8rem}
+.visit .facts li{border-top-color:rgba(255,244,225,.2)}
+.visit .facts b{color:var(--glaze)}
+@media (max-width:860px){.visit__grid{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+.foot{background:var(--ink-2);color:rgba(255,244,225,.82);padding:3rem var(--gutter) calc(3rem + env(safe-area-inset-bottom));font-size:.98rem}
+.foot__inner{max-width:72rem;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:flex-start;justify-content:space-between}
+.foot__brand{display:flex;align-items:center;gap:.7rem;color:var(--cream);font-family:var(--display);font-style:italic;font-weight:700;font-size:1.5rem}
+.foot__brand svg{width:2.4rem;height:2.4rem}
+.foot address{font-style:normal;line-height:1.7}
+.foot a{text-underline-offset:.2em}
+.credit{flex-basis:100%;border-top:1px solid rgba(255,244,225,.12);padding-top:1.2rem;font-size:.88rem;color:rgba(255,244,225,.6)}
+
+@media (prefers-reduced-motion:reduce){
+  .mote{animation:none}
+  .hero__video{transition:none}
+  .layer,.checker__strip{will-change:auto}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Bakery",
+  "@id":"https://donutpalace-deridder.pages.dev/#shop",
+  "name":"Donut Palace",
+  "url":"https://donutpalace-deridder.pages.dev/",
+  "image":"https://donutpalace-deridder.pages.dev/og.jpg",
+  "logo":"https://donutpalace-deridder.pages.dev/assets/icon-512.png",
+  "telephone":"+1-337-463-9800",
+  "priceRange":"$",
+  "servesCuisine":["Donuts","Kolaches","Breakfast"],
+  "address":{"@type":"PostalAddress","streetAddress":"732 N Pine St","addressLocality":"DeRidder","addressRegion":"LA","postalCode":"70634","addressCountry":"US"},
+  "geo":{"@type":"GeoCoordinates","latitude":30.8571297,"longitude":-93.2886828},
+  "hasMap":"https://maps.google.com/?cid=4934053270461945530",
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"04:30","closes":"12:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"05:00","closes":"12:00"}
+  ],
+  "hasMenu":{"@type":"Menu","hasMenuSection":[
+    {"@type":"MenuSection","name":"Donuts","hasMenuItem":[
+      {"@type":"MenuItem","name":"Plain Glaze","offers":{"@type":"Offer","price":"1.10","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Chocolate Icing","offers":{"@type":"Offer","price":"1.20","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Cake","offers":{"@type":"Offer","price":"1.20","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Filled","offers":{"@type":"Offer","price":"1.40","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Eclair","offers":{"@type":"Offer","price":"1.79","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Twist","offers":{"@type":"Offer","price":"1.79","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Apple Fritter","offers":{"@type":"Offer","price":"1.79","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Cinnamon Roll","offers":{"@type":"Offer","price":"1.79","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Donut Holes","offers":{"@type":"Offer","price":"1.85","priceCurrency":"USD"}}]},
+    {"@type":"MenuSection","name":"Kolaches","hasMenuItem":[
+      {"@type":"MenuItem","name":"Large Pig","offers":{"@type":"Offer","price":"2.79","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Jalapeño","offers":{"@type":"Offer","price":"2.79","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Small Pig","offers":{"@type":"Offer","price":"1.50","priceCurrency":"USD"}}]},
+    {"@type":"MenuSection","name":"Croissant sandwiches","hasMenuItem":[
+      {"@type":"MenuItem","name":"Combo","offers":{"@type":"Offer","price":"4.25","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Bacon, Egg and Cheese","offers":{"@type":"Offer","price":"3.99","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Ham, Egg and Cheese","offers":{"@type":"Offer","price":"3.99","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Sausage, Egg and Cheese","offers":{"@type":"Offer","price":"3.99","priceCurrency":"USD"}}]},
+    {"@type":"MenuSection","name":"More","hasMenuItem":[
+      {"@type":"MenuItem","name":"Biscuit","offers":{"@type":"Offer","price":"2.50","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Burrito","offers":{"@type":"Offer","price":"2.50","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Boudin","offers":{"@type":"Offer","price":"2.90","priceCurrency":"USD"}}]},
+    {"@type":"MenuSection","name":"Drinks","hasMenuItem":[
+      {"@type":"MenuItem","name":"Coffee","offers":{"@type":"Offer","price":"1.70","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Cappuccino","offers":{"@type":"Offer","price":"1.90","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Milk","offers":{"@type":"Offer","price":"2.49","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Juice","offers":{"@type":"Offer","price":"1.65","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Soda","offers":{"@type":"Offer","price":"1.50","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Water","offers":{"@type":"Offer","price":"1.50","priceCurrency":"USD"}},
+      {"@type":"MenuItem","name":"Energy Drinks","offers":{"@type":"Offer","price":"2.99","priceCurrency":"USD"}}]}
+  ]}
+}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="dp-hole" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+      <rect width="64" height="64" fill="#fff"/><circle cx="32" cy="41" r="6.2" fill="#000"/>
+    </mask>
+    <symbol id="dp-mark" viewBox="0 0 64 64">
+      <g mask="url(#dp-hole)">
+        <circle cx="32" cy="41" r="18" fill="#C9822F"/>
+        <path fill="#FFF4E1" d="M15.8 44.4A16.55 16.55 0 1 1 48.2 44.4C47.6 46.4 46.6 46.2 45.6 48.4 44.7 50.6 44.5 53.6 42.2 53.6 39.9 53.6 40.2 50.1 39.2 48.6 38.1 47 35.9 47.6 34.7 49 33.5 50.4 31.4 50.6 30.2 49.1 29 47.6 26.6 47.4 25.6 49.3 24.6 51.2 24.8 55.2 22.2 55.2 19.6 55.2 20.1 50.8 19.2 48.9 18.3 47 16.6 46.6 15.8 44.4Z"/>
+        <path fill="#fff" opacity=".55" d="M21 32.6c2.6-3.4 6.4-5.3 10.6-5.6.9 0 1 1.3.1 1.4-3.7.5-6.9 2.2-9.2 5.1-.5.7-2 .1-1.5-.9Z"/>
+      </g>
+      <path fill="#E7A548" d="M17.8 21.4 15.6 8.2l8.6 6.4L32 3.8l7.8 10.8 8.6-6.4-2.2 13.2c-9.2-2.6-19.2-2.6-28.4 0Z"/>
+      <circle cx="15.6" cy="7.6" r="2.4" fill="#E7A548"/><circle cx="32" cy="3.4" r="2.4" fill="#E7A548"/><circle cx="48.4" cy="7.6" r="2.4" fill="#E7A548"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top" id="top">
+  <a class="brand" href="#main" aria-label="Donut Palace, back to top">
+    <svg aria-hidden="true"><use href="#dp-mark"/></svg><span>Donut Palace</span>
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#menu">Menu</a><a href="#reviews">Reviews</a><a href="#visit">Hours &amp; directions</a>
+  </nav>
+  <a class="pill" href="tel:+13374639800"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="layer hero__media" data-depth="0.45">
+      <picture class="hero__poster">
+        <source media="(max-aspect-ratio: 4/5)" srcset="/assets/hero-tall.webp" width="1080" height="1920">
+        <img src="/assets/hero-wide.webp" width="1920" height="1080" alt="" fetchpriority="high">
+      </picture>
+      <video class="hero__video" id="hero-video" muted playsinline loop autoplay preload="auto" disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1">
+        <source media="(max-aspect-ratio: 4/5)" src="/assets/hero-tall-av1.mp4" type='video/mp4; codecs="av01.0.08M.08"'>
+        <source media="(max-aspect-ratio: 4/5)" src="/assets/hero-tall.mp4" type='video/mp4; codecs="avc1.640029"'>
+        <source src="/assets/hero-wide-av1.mp4" type='video/mp4; codecs="av01.0.08M.08"'>
+        <source src="/assets/hero-wide.mp4" type='video/mp4; codecs="avc1.640029"'>
+      </video>
+      <script>
+        (function(){
+          var v=document.getElementById('hero-video');
+          var tall=window.matchMedia('(max-aspect-ratio: 4/5)').matches;
+          v.poster=tall?'/assets/hero-tall.webp':'/assets/hero-wide.webp';
+          v.addEventListener('playing',function(){v.classList.add('is-playing');});
+          if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.preload='none';v.pause();}
+        })();
+      </script>
+      <div class="hero__shade"></div>
+    </div>
+
+    <div class="layer hero__motes" data-depth="0.22" aria-hidden="true">
+      <span class="mote" style="left:8%;top:22%;width:14px;height:14px;--dur:19s;--dx:14px;--dy:-30px"></span>
+      <span class="mote is-soft" style="left:16%;top:64%;width:46px;height:46px;--dur:27s;--dx:-18px;--dy:-22px"></span>
+      <span class="mote" style="left:31%;top:38%;width:8px;height:8px;--dur:17s;--dx:8px;--dy:-34px"></span>
+      <span class="mote is-soft" style="left:44%;top:14%;width:70px;height:70px;--dur:31s;--dx:20px;--dy:18px"></span>
+      <span class="mote" style="left:52%;top:72%;width:12px;height:12px;--dur:21s;--dx:-10px;--dy:-28px"></span>
+      <span class="mote" style="left:63%;top:30%;width:9px;height:9px;--dur:16s;--dx:12px;--dy:-24px"></span>
+      <span class="mote is-soft" style="left:71%;top:58%;width:38px;height:38px;--dur:25s;--dx:-16px;--dy:-30px"></span>
+      <span class="mote" style="left:79%;top:18%;width:16px;height:16px;--dur:23s;--dx:-12px;--dy:26px"></span>
+      <span class="mote" style="left:88%;top:46%;width:7px;height:7px;--dur:15s;--dx:6px;--dy:-30px"></span>
+      <span class="mote is-soft" style="left:92%;top:80%;width:58px;height:58px;--dur:29s;--dx:-22px;--dy:-14px"></span>
+      <span class="mote" style="left:24%;top:86%;width:10px;height:10px;--dur:20s;--dx:10px;--dy:-26px"></span>
+      <span class="mote" style="left:58%;top:8%;width:6px;height:6px;--dur:18s;--dx:-8px;--dy:22px"></span>
+    </div>
+
+    <div class="hero__content" data-depth="0">
+      <div class="hero__top">
+        <svg class="crest reveal" style="--i:0" viewBox="0 0 64 64" aria-hidden="true"><use href="#dp-mark"/></svg>
+        <h1 class="wordmark reveal" style="--i:1" id="hero-title">Donut Palace</h1>
+        <p class="lede reveal" style="--i:2">Donuts, kolaches and croissant sandwiches on North Pine Street in DeRidder. Open before sunrise.</p>
+      </div>
+      <div class="hero__bottom">
+        <p class="status reveal" style="--i:3" data-status>Open Mon–Sat 4:30 AM, Sun 5 AM</p>
+        <div class="actions reveal" style="--i:4">
+          <a class="btn btn--glaze" href="tel:+13374639800"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call (337) 463-9800</a>
+          <a class="btn btn--line" href="https://www.google.com/maps/dir/?api=1&amp;destination=Donut%20Palace%2C%20732%20N%20Pine%20St%2C%20DeRidder%2C%20LA%2070634" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Get directions</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="vidtoggle" type="button" id="vid-toggle" aria-pressed="false" aria-label="Pause the background video">
+      <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2h3v12H4zM9 2h3v12H9z"/></svg>
+      <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 2.5v11l9-5.5z"/></svg>
+    </button>
+  </section>
+
+  <div class="checker" aria-hidden="true"><div class="checker__strip" data-slide="0.35"></div></div>
+
+  <section class="section tiled" id="about" aria-labelledby="about-title">
+    <div class="wrap about">
+      <div class="about__copy">
+        <h2 class="h2" id="about-title">Before sunrise on Pine Street</h2>
+        <p>Donut Palace opens at 4:30 in the morning Monday through Saturday, and at 5 on Sunday. The glass case holds glazed and chocolate-iced donuts, cake donuts, twists, eclairs and apple fritters, with kolaches, croissant sandwiches, biscuits, burritos and boudin for something savory.</p>
+        <p>Grab a coffee or a cappuccino, take a table inside, or take a box to go.</p>
+        <ul class="facts">
+          <li><b>Eat here</b><span>Dine in or take out</span></li>
+          <li><b>Big order</b><span>Please call ahead: <a href="tel:+13374639800">(337) 463-9800</a></span></li>
+          <li><b>On Google</b><span>4.6 out of 5 stars</span></li>
+        </ul>
+      </div>
+      <div class="about__art" aria-hidden="true">
+        <figure class="art-a" data-drift="0.06">
+          <img src="/assets/case-display-640.webp" srcset="/assets/case-display-640.webp 640w, /assets/case-display-960.webp 960w" sizes="(max-width: 860px) 80vw, 26rem" width="640" height="853" alt="" loading="lazy" decoding="async">
+        </figure>
+        <figure class="art-b" data-drift="-0.05">
+          <img src="/assets/case-shelves-640.webp" srcset="/assets/case-shelves-640.webp 640w, /assets/case-shelves-960.webp 960w" sizes="(max-width: 860px) 45vw, 16rem" width="640" height="853" alt="" loading="lazy" decoding="async">
+        </figure>
+        <span class="art-tag">Hot coffee too</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tiled" id="menu" aria-labelledby="menu-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="menu-head">
+        <h2 class="h2" id="menu-title">The menu board</h2>
+        <p class="intro">Prices from the shop's posted menu. They can change, so check at the counter.</p>
+      </div>
+      <div class="board">
+        <div class="board__title" aria-hidden="true"><svg><use href="#dp-mark"/></svg><span class="lb">DONUT PALACE</span></div>
+        <div class="board__cols">
+          <div>
+            <h3><span class="lb">Donuts</span></h3>
+            <ul>
+              <li><span class="lb">Plain glaze</span><span>$1.10</span></li>
+              <li><span class="lb">Choc icing</span><span>$1.20</span></li>
+              <li><span class="lb">Cake</span><span>$1.20</span></li>
+              <li><span class="lb">Filled</span><span>$1.40</span></li>
+              <li><span class="lb">Eclair</span><span>$1.79</span></li>
+              <li><span class="lb">Twist</span><span>$1.79</span></li>
+              <li><span class="lb">Apple fritter</span><span>$1.79</span></li>
+              <li><span class="lb">Cinnamon roll</span><span>$1.79</span></li>
+              <li><span class="lb">Donut holes</span><span>$1.85</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3><span class="lb">Kolaches</span></h3>
+            <ul>
+              <li><span class="lb">Large pig</span><span>$2.79</span></li>
+              <li><span class="lb">Jalapeño</span><span>$2.79</span></li>
+              <li><span class="lb">Small pig</span><span>$1.50</span></li>
+            </ul>
+            <h3><span class="lb">Croissants</span></h3>
+            <ul>
+              <li><span class="lb">Combo</span><span>$4.25</span></li>
+              <li><span class="lb">Bacon egg cheese</span><span>$3.99</span></li>
+              <li><span class="lb">Ham egg cheese</span><span>$3.99</span></li>
+              <li><span class="lb">Sausage egg cheese</span><span>$3.99</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3><span class="lb">More</span></h3>
+            <ul>
+              <li><span class="lb">Biscuit</span><span>$2.50</span></li>
+              <li><span class="lb">Burrito</span><span>$2.50</span></li>
+              <li><span class="lb">Boudin</span><span>$2.90</span></li>
+            </ul>
+            <h3><span class="lb">Drinks</span></h3>
+            <ul>
+              <li><span class="lb">Coffee</span><span>$1.70</span></li>
+              <li><span class="lb">Cappuccino</span><span>$1.90</span></li>
+              <li><span class="lb">Milk</span><span>$2.49</span></li>
+              <li><span class="lb">Juice</span><span>$1.65</span></li>
+              <li><span class="lb">Soda</span><span>$1.50</span></li>
+              <li><span class="lb">Water</span><span>$1.50</span></li>
+              <li><span class="lb">Energy drinks</span><span>$2.99</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="board__foot"><span class="lb">Large order? Please call in advance</span><a href="tel:+13374639800">(337) 463-9800</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+    <div class="wrap">
+      <h2 class="h2" id="reviews-title">What customers say</h2>
+      <div class="quotes">
+        <blockquote class="quote">
+          <p>“The donuts are always fresh, soft, and full of flavor.”</p>
+          <footer><span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><span><cite>Stephanie G.</cite>, Google review</span></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“Very sweet customer service! 1st time coming will return.”</p>
+          <footer><span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><span><cite>Tina G.</cite>, Google review</span></footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>“The store was clean and the cashier was super friendly.”</p>
+          <footer><span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><span><cite>Carla M.</cite>, Google review</span></footer>
+        </blockquote>
+      </div>
+      <a class="reviews-link" href="https://maps.google.com/?cid=4934053270461945530" target="_blank" rel="noopener">Read all the reviews on Google</a>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="hours-title">
+    <div class="wrap visit__grid">
+      <div>
+        <h2 class="h2" id="hours-title">Hours</h2>
+        <p class="status" data-status>Open Mon–Sat 4:30 AM, Sun 5 AM</p>
+        <table class="hours">
+          <caption class="sr">Opening hours, Central Time</caption>
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>4:30 AM – 12 PM</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>4:30 AM – 12 PM</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>4:30 AM – 12 PM</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>4:30 AM – 12 PM</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>4:30 AM – 12 PM</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>4:30 AM – 12 PM</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td>5 AM – 12 PM</td></tr>
+          </tbody>
+        </table>
+        <p class="fine">Holiday hours may differ.</p>
+      </div>
+      <div>
+        <h2 class="h2">Find us</h2>
+        <p class="address"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Donut%20Palace%2C%20732%20N%20Pine%20St%2C%20DeRidder%2C%20LA%2070634" target="_blank" rel="noopener">732 N Pine St<br>DeRidder, LA 70634</a></p>
+        <div class="actions">
+          <a class="btn btn--glaze" href="https://www.google.com/maps/dir/?api=1&amp;destination=Donut%20Palace%2C%20732%20N%20Pine%20St%2C%20DeRidder%2C%20LA%2070634" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Get directions</a>
+          <a class="btn btn--line" href="tel:+13374639800"><svg aria-hidden="true"><use href="#i-phone"/></svg>(337) 463-9800</a>
+        </div>
+        <ul class="facts">
+          <li><b>Eat here</b><span>Dine in or take out</span></li>
+          <li><b>Big order</b><span>Call ahead so it's ready</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand"><svg aria-hidden="true"><use href="#dp-mark"/></svg>Donut Palace</div>
+    <address>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Donut%20Palace%2C%20732%20N%20Pine%20St%2C%20DeRidder%2C%20LA%2070634" target="_blank" rel="noopener">732 N Pine St, DeRidder, LA 70634</a><br>
+      <a href="tel:+13374639800">(337) 463-9800</a>
+    </address>
+    <p style="margin:0;line-height:1.7">Monday to Saturday, 4:30 AM to noon<br>Sunday, 5 AM to noon</p>
+    <p class="credit" style="margin:0">Website by <a href="https://zylinstudios.com" target="_blank" rel="noopener">Zylin Studio</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var video = document.getElementById('hero-video');
+  var toggle = document.getElementById('vid-toggle');
+
+  /* ---- hero video: fade in once frames are playing; pause/play control ---- */
+  function setPaused(p){
+    toggle.setAttribute('aria-pressed', p ? 'true' : 'false');
+    toggle.setAttribute('aria-label', p ? 'Play the background video' : 'Pause the background video');
+  }
+  video.addEventListener('playing', function(){ video.classList.add('is-playing'); setPaused(false); });
+  if (!video.paused && video.readyState > 2) { video.classList.add('is-playing'); }
+  video.addEventListener('pause', function(){ setPaused(true); });
+  if (reduce.matches) { setPaused(true); }
+  else {
+    var tryPlay = function(){ var p = video.play(); if (p && p.catch) p.catch(function(){ setPaused(true); }); };
+    if (video.readyState >= 2) tryPlay(); else video.addEventListener('canplay', tryPlay, { once: true });
+  }
+  toggle.addEventListener('click', function(){
+    if (video.paused) { video.preload = 'auto'; var p = video.play(); if (p && p.catch) p.catch(function(){}); }
+    else video.pause();
+  });
+  /* save battery: pause when the hero is far off screen, resume when back (unless paused by the visitor) */
+  var userPaused = false;
+  toggle.addEventListener('click', function(){ userPaused = video.paused; });
+
+  /* ---- header turns solid after the hero ---- */
+  var header = document.getElementById('top');
+  var hero = document.querySelector('.hero');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries){
+      var e = entries[0];
+      header.classList.toggle('is-solid', !e.isIntersecting);
+      if (!reduce.matches && !userPaused) { if (e.isIntersecting) { if (video.paused) video.play().catch(function(){}); } else if (!video.paused) video.pause(); }
+    }, { rootMargin: '-64px 0px 0px 0px' }).observe(hero);
+  }
+
+  /* ---- letterboard: each plastic letter sits a little crooked ---- */
+  var seed = 7;
+  function rnd(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  document.querySelectorAll('.lb').forEach(function(el){
+    var text = el.textContent;
+    el.textContent = '';
+    var real = document.createElement('span'); real.className = 'sr'; real.textContent = text; el.appendChild(real);
+    var words = text.split(' ');
+    for (var w = 0; w < words.length; w++) {
+      var ws = document.createElement('span'); ws.className = 'w'; ws.setAttribute('aria-hidden', 'true');
+      for (var i = 0; i < words[w].length; i++) {
+        var s = document.createElement('i');
+        s.textContent = words[w][i];
+        s.style.transform = 'translateY(' + ((rnd() - .5) * 1.4).toFixed(2) + 'px) rotate(' + ((rnd() - .5) * 2.6).toFixed(2) + 'deg)';
+        ws.appendChild(s);
+      }
+      el.appendChild(ws);
+      if (w < words.length - 1) el.appendChild(document.createTextNode(' '));
+    }
+  });
+
+  /* ---- live open / closed status (Central Time) ---- */
+  var OPEN = [300, 270, 270, 270, 270, 270, 270]; /* minutes after midnight, Sun..Sat */
+  var CLOSE = 720;
+  function nowCT(){
+    var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+    var get = function(t){ for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return parts[i].value; };
+    var day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(get('weekday'));
+    return { day: day, min: parseInt(get('hour'), 10) * 60 + parseInt(get('minute'), 10) };
+  }
+  function clock(m){ var h = Math.floor(m / 60), mm = m % 60; return ((h + 11) % 12 + 1) + (mm ? ':' + (mm < 10 ? '0' : '') + mm : '') + (h < 12 ? ' AM' : ' PM'); }
+  function updateStatus(){
+    var t = nowCT(), open = OPEN[t.day], text, isOpen = false;
+    if (t.min >= open && t.min < CLOSE) { text = 'Open now until noon'; isOpen = true; }
+    else if (t.min < open) { text = 'Opens today at ' + clock(open); }
+    else { var nd = (t.day + 1) % 7; text = 'Closed now. Opens tomorrow at ' + clock(OPEN[nd]); }
+    document.querySelectorAll('[data-status]').forEach(function(el){ el.textContent = text; el.classList.toggle('is-closed', !isOpen); });
+    document.querySelectorAll('.hours tr').forEach(function(tr){
+      var today = +tr.getAttribute('data-day') === t.day;
+      tr.classList.toggle('is-today', today);
+      var tag = tr.querySelector('.today-tag');
+      if (today && !tag) { tag = document.createElement('span'); tag.className = 'today-tag'; tag.textContent = 'Today'; tr.querySelector('th').appendChild(tag); }
+      if (!today && tag) tag.remove();
+    });
+  }
+  updateStatus(); setInterval(updateStatus, 60000);
+
+  /* ---- parallax: transform-only, three hero depths + two section accents ---- */
+  var depthEls = [].slice.call(document.querySelectorAll('.hero [data-depth]'));
+  var content = document.querySelector('.hero__content');
+  var strip = document.querySelector('[data-slide]');
+  var drifts = [].slice.call(document.querySelectorAll('[data-drift]'));
+  var ticking = false, active = false;
+
+  function frame(){
+    ticking = false;
+    var y = window.scrollY || window.pageYOffset, vh = window.innerHeight, hh = hero.offsetHeight;
+    if (y < hh) {
+      for (var i = 0; i < depthEls.length; i++) {
+        var d = parseFloat(depthEls[i].getAttribute('data-depth'));
+        depthEls[i].style.transform = 'translate3d(0,' + (y * d).toFixed(1) + 'px,0)';
+      }
+      content.style.opacity = Math.max(0, 1 - y / (hh * .62)).toFixed(3);
+    }
+    if (strip) strip.style.transform = 'translate3d(' + (-((y * parseFloat(strip.getAttribute('data-slide'))) % 112)).toFixed(1) + 'px,0,0)';
+    for (var j = 0; j < drifts.length; j++) {
+      var r = drifts[j].parentNode.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > vh + 200) continue;
+      var off = (r.top + r.height / 2 - vh / 2) * parseFloat(drifts[j].getAttribute('data-drift'));
+      drifts[j].style.transform = 'translate3d(0,' + off.toFixed(1) + 'px,0)';
+    }
+  }
+  function onScroll(){ if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  function clear(){
+    depthEls.concat(drifts).forEach(function(el){ el.style.transform = ''; });
+    if (strip) strip.style.transform = '';
+    content.style.opacity = '';
+  }
+  function setMotion(){
+    if (reduce.matches) {
+      if (active) { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); active = false; }
+      clear();
+    } else if (!active) {
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      active = true; frame();
+    }
+  }
+  setMotion();
+  if (reduce.addEventListener) reduce.addEventListener('change', function(){ setMotion(); if (reduce.matches && !video.paused) video.pause(); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://donutpalace-deridder.pages.dev/sitemap.xml

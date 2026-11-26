@@ -1,0 +1,4 @@
+The DP Display, DP Text and DP Condensed web fonts in this folder are Latin subsets,
+renamed as the license asks for modified versions, of TeX Gyre Bonum and TeX Gyre Heros
+(c) GUST e-foundry, distributed under the GUST Font License (LPPL-based):
+https://www.gust.org.pl/projects/e-foundry/licenses

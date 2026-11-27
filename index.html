@@ -273,6 +273,35 @@ button.btn--line{background:transparent;cursor:pointer;font-family:inherit}
 .d--fritter{border-radius:46% 54% 42% 58%/55% 45% 58% 42%;background:radial-gradient(circle at 35% 35%,#E4B06E,#B97636 70%)}
 .d--roll{background:repeating-radial-gradient(circle,#D9A45E 0 3px,#A9662C 3px 5px);border-radius:50%}
 .d--holes{background:radial-gradient(circle at 30% 36%,#EBC27E 0 15%,transparent 16%),radial-gradient(circle at 68% 38%,#D59A55 0 15%,transparent 16%),radial-gradient(circle at 48% 70%,#C88A45 0 15%,transparent 16%)}
+.pack{display:flex;align-items:center;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.pack__label{font-family:var(--cond);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;color:var(--cocoa-2);margin-right:.3rem}
+.pack__opt{font:inherit;font-weight:700;font-size:.95rem;padding:.4rem 1.05rem;border-radius:999px;border:1.5px solid rgba(43,27,22,.3);background:transparent;color:var(--cocoa);cursor:pointer}
+.pack__opt[aria-checked="true"]{background:var(--cocoa);border-color:var(--cocoa);color:var(--cream)}
+.carry{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem .8rem;align-items:flex-end}
+.carry .box{flex:1 1 17rem;min-width:0}
+.bag{flex:0 1 10rem;min-width:9rem;display:flex;flex-direction:column;justify-content:flex-end}
+.carry .box[hidden]+.bag,.carry .bag:only-child{width:min(100%,15rem);margin:0 auto}
+.bag__pile{display:flex;flex-wrap:wrap-reverse;justify-content:center;align-content:flex-start;gap:2px;padding:0 .7rem;margin-bottom:-14px;position:relative;z-index:0;min-height:1.5rem}
+.bag__pile .it{width:2.1rem;height:2.1rem;display:grid;place-items:center}
+.bag__pile .it .d{width:100%}
+.bag__body{position:relative;z-index:1;height:8.5rem;border-radius:4px 4px 10px 10px;background:linear-gradient(180deg,#C9975E,#B8854C);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;color:#6E3E1A;box-shadow:inset 0 -14px 20px -12px rgba(80,40,10,.4)}
+.bag__body::before{content:"";position:absolute;inset:0 0 auto 0;height:16px;background:linear-gradient(180deg,#A9773F,#B8854C);border-radius:4px 4px 0 0;box-shadow:0 2px 0 rgba(80,40,10,.15)}
+.bag__pile .pop{animation:pop .38s cubic-bezier(.3,1.6,.5,1)}
+.bag__body svg{width:2.4rem;height:2.4rem;opacity:.85}
+.bag__body span{font-family:var(--display);font-style:italic;font-weight:700;font-size:1rem}
+.bag.bump .bag__body{animation:bump .35s ease}
+@keyframes bump{40%{transform:translateY(3px) scaleY(.97)}}
+.k{width:88%;height:52%;border-radius:999px;background:radial-gradient(ellipse at 50% 50%,#E8B676 0 60%,#C98845 100%);position:relative}
+.k::before,.k::after{content:"";position:absolute;top:30%;width:18%;height:40%;border-radius:50%;background:#B5584A}
+.k::before{left:-6%}.k::after{right:-6%}
+.cr{width:92%;height:60%;border-radius:50% 50% 45% 45%/80% 80% 30% 30%;background:repeating-linear-gradient(100deg,#E4A85C 0 6px,#C98538 6px 9px);transform:rotate(-8deg)}
+.bs{width:78%;aspect-ratio:1;border-radius:42%;background:radial-gradient(circle at 40% 35%,#F2D39B,#D5A260 75%)}
+.bw{width:92%;height:46%;border-radius:999px;background:linear-gradient(180deg,#EADBC0 0 70%,#D8C3A0 70%);transform:rotate(-12deg)}
+.bd{width:92%;height:40%;border-radius:999px;background:linear-gradient(180deg,#8E4A35,#6E3424)}
+.cup{width:58%;height:78%;border-radius:3px 3px 8px 8px;background:linear-gradient(180deg,#FFF4E1 0 16%,var(--cherry) 16% 100%);clip-path:polygon(0 0,100% 0,86% 100%,14% 100%)}
+.cup.cold{background:linear-gradient(180deg,#F5F5F5 0 14%,#2E6FB0 14% 100%)}
+@media (prefers-reduced-motion:reduce){.bag.bump .bag__body{animation:none}}
 .box__count{margin:.8rem 0 0;font-family:var(--cond);font-weight:700;letter-spacing:.06em;font-size:.95rem;color:var(--cocoa-2);text-transform:uppercase}
 .lines{list-style:none;margin:1rem 0 0;padding:0;border-top:1.5px dashed rgba(43,27,22,.25)}
 .lines li{display:flex;align-items:center;gap:.6rem;padding:.55rem 0;border-bottom:1px solid rgba(43,27,22,.1)}
@@ -557,9 +586,20 @@ button.btn--line{background:transparent;cursor:pointer;font-family:inherit}
         </div>
         <div class="ticket" aria-labelledby="ticket-title">
           <h3 class="sr" id="ticket-title">Your order</h3>
-          <div class="box" aria-hidden="true">
-            <div class="box__lid">Donut Palace</div>
-            <div class="box__tray" id="order-tray"></div>
+          <div class="pack" role="radiogroup" aria-label="Pack the donuts in">
+            <span class="pack__label">Donuts go in a</span>
+            <button type="button" class="pack__opt" role="radio" aria-checked="true" data-pack="box">Box</button>
+            <button type="button" class="pack__opt" role="radio" aria-checked="false" data-pack="bag">Bag</button>
+          </div>
+          <div class="carry">
+            <div class="box" aria-hidden="true" id="order-box">
+              <div class="box__lid">Donut Palace</div>
+              <div class="box__tray" id="order-tray"></div>
+            </div>
+            <div class="bag" aria-hidden="true" id="order-bag" hidden>
+              <div class="bag__pile" id="bag-pile"></div>
+              <div class="bag__body"><svg aria-hidden="true"><use href="#dp-mark"/></svg><span>Donut Palace</span></div>
+            </div>
           </div>
           <p class="box__count" id="box-count">0 of 12 donuts</p>
           <ul class="lines" id="order-lines"></ul>
@@ -770,11 +810,33 @@ button.btn--line{background:transparent;cursor:pointer;font-family:inherit}
   }
   function add(id){ qty[id] = (qty[id] || 0) + 1; if (order.indexOf(id) < 0) order.push(id); lastAdded = id; render(); }
   function sub(id){ if (!qty[id]) return; qty[id]--; if (!qty[id]) { delete qty[id]; order.splice(order.indexOf(id), 1); } lastAdded = null; render(); }
+  var pack = 'box';
+  function iconFor(it){
+    if (it.cat === cats[0]) return 'd ' + (LOOK[it.name] || '');
+    var n = it.name.toLowerCase();
+    if (it.cat === 'Kolaches') return 'k';
+    if (it.cat === 'Croissants') return 'cr';
+    if (n.indexOf('biscuit') > -1) return 'bs';
+    if (n.indexOf('burrito') > -1) return 'bw';
+    if (n.indexOf('boudin') > -1) return 'bd';
+    if (/coffee|cappuccino/.test(n)) return 'cup';
+    return 'cup cold';
+  }
+  document.querySelectorAll('.pack__opt').forEach(function(b){
+    b.addEventListener('click', function(){
+      pack = b.getAttribute('data-pack'); lastAdded = null;
+      document.querySelectorAll('.pack__opt').forEach(function(o){ o.setAttribute('aria-checked', o === b ? 'true' : 'false'); });
+      render();
+    });
+  });
   function render(){
     renderChips();
-    /* tray: one slot per donut, 12 to a box */
-    var donuts = [];
-    order.forEach(function(id){ if (items[id].cat === cats[0]) for (var k = 0; k < qty[id]; k++) donuts.push(id); });
+    /* donuts go in the box (12 a box) or the bag; everything else rides in the bag */
+    var donuts = [], bagged = [];
+    order.forEach(function(id){ for (var k = 0; k < qty[id]; k++) ((items[id].cat === cats[0] && pack === 'box') ? donuts : bagged).push(id); });
+    var boxEl = document.getElementById('order-box'), bagEl = document.getElementById('order-bag');
+    boxEl.hidden = pack !== 'box';
+    bagEl.hidden = !(pack === 'bag' || bagged.length);
     var shown = donuts.length % 12 === 0 && donuts.length ? donuts.slice(-12) : donuts.slice(donuts.length - donuts.length % 12);
     tray.innerHTML = '';
     for (var s = 0; s < 12; s++) {
@@ -786,8 +848,19 @@ button.btn--line{background:transparent;cursor:pointer;font-family:inherit}
       }
       tray.appendChild(slot);
     }
-    var boxes = Math.ceil(donuts.length / 12);
-    document.getElementById('box-count').textContent = donuts.length <= 12 ? donuts.length + ' of 12 donuts' : donuts.length + ' donuts, ' + boxes + ' boxes';
+    var pile = document.getElementById('bag-pile'); pile.innerHTML = '';
+    bagged.slice(-18).forEach(function(id, n, arr){
+      var w = document.createElement('div'); w.className = 'it';
+      var i = document.createElement('div'); i.className = iconFor(items[id]);
+      if (n === arr.length - 1 && lastAdded === id) i.className += ' pop';
+      w.appendChild(i); pile.appendChild(w);
+    });
+    if (lastAdded !== null && bagged.indexOf(lastAdded) > -1 && !reduce.matches) { bagEl.classList.remove('bump'); void bagEl.offsetWidth; bagEl.classList.add('bump'); }
+    var parts = [];
+    if (pack === 'box' && (donuts.length || !bagged.length)) parts.push(donuts.length <= 12 ? donuts.length + ' of 12 donuts' : donuts.length + ' donuts, ' + Math.ceil(donuts.length / 12) + ' boxes');
+    if (bagged.length) parts.push(bagged.length + (bagged.length === 1 ? ' item' : ' items') + ' in the bag');
+    else if (pack === 'bag') parts.push('Bag is empty');
+    document.getElementById('box-count').textContent = parts.join(', ');
     /* ticket lines */
     linesEl.innerHTML = ''; var total = 0;
     if (!order.length) { var e = document.createElement('li'); e.className = 'empty'; e.textContent = 'Your box is empty. Tap something to start.'; linesEl.appendChild(e); }
@@ -806,7 +879,7 @@ button.btn--line{background:transparent;cursor:pointer;font-family:inherit}
   }
   function orderText(){
     var t = 0, rows = order.map(function(id){ var l = items[id].price * qty[id]; t += l; return qty[id] + ' x ' + items[id].name + '  ' + money(l); });
-    return 'Donut Palace order\n' + rows.join('\n') + '\nSubtotal ' + money(t) + ' before tax';
+    return 'Donut Palace order' + (pack === 'bag' ? ' (donuts in a bag)' : '') + '\n' + rows.join('\n') + '\nSubtotal ' + money(t) + ' before tax';
   }
   document.getElementById('order-copy').addEventListener('click', function(){
     var btn = this, text = orderText(), done = function(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = 'Copy order'; }, 1600); };

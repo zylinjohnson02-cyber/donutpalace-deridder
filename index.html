@@ -289,28 +289,12 @@ button.btn--line{background:transparent;cursor:pointer;font-family:inherit}
 .ticket .btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
 .linkbtn{margin-top:.9rem;background:none;border:0;padding:0;font:inherit;font-size:.95rem;color:var(--cherry);text-decoration:underline;text-underline-offset:.2em;cursor:pointer}
 
-.punch{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center;margin-top:clamp(3.5rem,7vw,5.5rem);padding-top:clamp(2.5rem,5vw,3.5rem);border-top:1.5px solid rgba(255,244,225,.2)}
-.punch h3{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:.8rem}
-.punch p{color:rgba(255,244,225,.82);max-width:var(--measure)}
-.card{position:relative;border-radius:20px;padding:1.4rem 1.4rem 1.2rem;background:linear-gradient(135deg,#1E2A4E,#141C33);box-shadow:0 30px 60px -28px rgba(10,6,20,.7);border:1px solid rgba(255,244,225,.12);overflow:hidden}
-.card::after{content:"";position:absolute;right:-30%;top:-60%;width:80%;height:160%;background:radial-gradient(closest-side,rgba(231,165,72,.22),transparent);pointer-events:none}
-.card__top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.1rem}
-.card__brand{display:flex;align-items:center;gap:.5rem;font-family:var(--display);font-style:italic;font-weight:700;font-size:1.2rem}
-.card__brand svg{width:1.8rem;height:1.8rem}
-.card__count{font-family:var(--cond);font-weight:700;letter-spacing:.06em;font-size:.95rem;color:var(--glaze)}
-.stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;position:relative;z-index:1}
-.stamp{aspect-ratio:1;border-radius:50%;border:2px dashed rgba(255,244,225,.35);background:transparent;cursor:pointer;display:grid;place-items:center;padding:0;color:var(--cocoa)}
-.stamp svg{width:92%;height:92%;opacity:0;transform:scale(.3) rotate(-30deg);transition:opacity .2s,transform .3s cubic-bezier(.3,1.6,.5,1)}
-.stamp[aria-pressed="true"]{border-style:solid;border-color:var(--glaze);background:var(--cream);box-shadow:0 0 0 3px rgba(231,165,72,.35)}
-.stamp[aria-pressed="true"] svg{opacity:1;transform:none}
-.card__msg{position:relative;z-index:1;margin:1rem 0 0;font-size:.98rem;color:rgba(255,244,225,.85);min-height:1.5em}
-.card.is-full{box-shadow:0 0 0 3px var(--glaze),0 30px 60px -28px rgba(10,6,20,.7)}
 
 .map{margin-top:2rem;border-radius:16px;overflow:hidden;border:1px solid rgba(255,244,225,.15);aspect-ratio:16/10;background:var(--ink-2)}
 .map iframe{display:block;width:100%;height:100%;border:0;filter:saturate(.85)}
-@media (max-width:860px){.order__grid,.punch{grid-template-columns:1fr}.chips{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.order__grid{grid-template-columns:1fr}.chips{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:400px){.chip{min-height:3.1rem;padding:.5rem .7rem;font-size:.95rem}}
-@media (prefers-reduced-motion:reduce){.d.pop{animation:none}.stamp svg{transition:none}}
+@media (prefers-reduced-motion:reduce){.d.pop{animation:none}}
 
 @media (prefers-reduced-motion:reduce){
   .mote{animation:none}
@@ -589,21 +573,6 @@ button.btn--line{background:transparent;cursor:pointer;font-family:inherit}
         </div>
       </div>
 
-      <div class="punch">
-        <div>
-          <span class="preview-tag">Preview</span>
-          <h3>A punch card that lives on your phone</h3>
-          <p>A rewards card the shop could switch on: one stamp per visit, ten fills the card, and there's no paper card to lose. This one is a demo, so go ahead and tap the circles.</p>
-        </div>
-        <div class="card" id="punch-card">
-          <div class="card__top">
-            <div class="card__brand"><svg aria-hidden="true"><use href="#dp-mark"/></svg>Donut Palace</div>
-            <div class="card__count" id="punch-count">0 / 10</div>
-          </div>
-          <div class="stamps" id="punch-stamps"></div>
-          <p class="card__msg" id="punch-msg" aria-live="polite">Tap a circle to add a stamp.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -865,24 +834,6 @@ button.btn--line{background:transparent;cursor:pointer;font-family:inherit}
   pickAdd.addEventListener('click', function(){ if (picked) { current = picked.cat; renderTabs(); add(picked.id); } });
   if (items.length) { renderTabs(); render(); }
 
-  /* ---- punch card demo (kept only in this browser) ---- */
-  var stampsEl = document.getElementById('punch-stamps'), punched = 0;
-  try { punched = Math.min(10, parseInt(localStorage.getItem('dp-punch') || '0', 10) || 0); } catch (e) {}
-  function renderPunch(){
-    stampsEl.innerHTML = '';
-    for (var i = 0; i < 10; i++) {
-      var b = document.createElement('button'); b.type = 'button'; b.className = 'stamp';
-      b.setAttribute('aria-pressed', i < punched ? 'true' : 'false'); b.setAttribute('aria-label', 'Visit ' + (i + 1));
-      b.innerHTML = '<svg viewBox="0 0 64 64" aria-hidden="true"><use href="#dp-mark"/></svg>';
-      (function(i){ b.addEventListener('click', function(){ punched = (i < punched && i === punched - 1) ? i : i + 1; save(); renderPunch(); }); })(i);
-      stampsEl.appendChild(b);
-    }
-    document.getElementById('punch-count').textContent = punched + ' / 10';
-    document.getElementById('punch-card').classList.toggle('is-full', punched === 10);
-    document.getElementById('punch-msg').textContent = punched === 10 ? 'Card full. This is where a reward would unlock.' : punched ? (10 - punched) + ' more visit' + (10 - punched === 1 ? '' : 's') + ' to fill the card.' : 'Tap a circle to add a stamp.';
-  }
-  function save(){ try { localStorage.setItem('dp-punch', String(punched)); } catch (e) {} }
-  renderPunch();
 
 
   /* ---- parallax: transform-only, three hero depths + two section accents ---- */
